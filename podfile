@@ -1,0 +1,13 @@
+platform :ios, '7.0'
+target 'LCFDeerShop’ do
+pod 'AFNetworking', '~> 2.6.0'
+pod 'ReactiveCocoa'
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'FMDBMigrationManager'
+pod 'FMDB'
+pod 'CocoaLumberjack'
+pod 'OLImageView', '~> 1.5.1'
+end

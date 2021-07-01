@@ -1,0 +1,77 @@
+//
+//  PrefixHeader.pch
+//  LCFDeerShop
+//
+//  Created by 李春菲 on 16/11/18.
+//  Copyright © 2016年 lichunfei. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+#define WebURL @"http://huaban.com/pins/953214451/"
+
+#import "UIImageView+WebCache.h"
+#import "HMJUtil.h"
+#import "Masonry.h"
+#import "UIFont+Fonts.h"
+#import "UIView+SetRect.h"
+#import "UIColor+WLZ_HexRGB.h"
+#import "ReactiveCocoa.h"
+#import "MJExtension.h"
+#import "NetWorkParamMacros.h"
+#import "UIColor+MYColor.h"
+#import "MBManager.h"
+#import "FMDBDataBase.h"
+#import "NSMutableArray+ZZExtension.h"
+#import "NSString+STRegex.h"
+#import "YYDeerShopRequest.h"
+
+
+#import "YMUtils.h"
+
+//公参封装
+#import <ZZNetwork/ZZNetwork.h>
+//当前屏幕宽高
+#define LCF_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define LCF_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+//设置颜色
+#define YM_RGBA(r,g,b,a)           [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
+
+#define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//字号
+#define XNFont(font) [UIFont systemFontOfSize:(font)]
+//__weake
+#define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
+
+
+//加载图片
+#define PNGIMAGE(NAME)         [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"png"]]
+#define JPGIMAGE(NAME)         [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"jpg"]]
+#define IMAGE(NAME,EXT)        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:(EXT)]]
+#define IMAGENAMED(NAME)       [UIImage imageNamed:NAME]
+
+// 当控件为全屏时的横纵左边
+#define kFrameX             (0.0)
+#define kFrameY             (0.0)
+
+#define kPhoneFrameWidth                 (320.0)
+#define kPhoneWithStatusNoPhone5Height   (480.0)
+#define kPhoneNoWithStatusNoPhone5Height (460.0)
+#define kPhoneWithStatusPhone5Height     (568.0)
+#define kPhoneNoWithStatusPhone5Height   (548.0)
+
+#define kPadFrameWidth                   (768.0)
+#define kPadWithStatusHeight             (1024.0)
+#define kPadNoWithStatusHeight           (1004.0)
+
+
+
+#define DesignHeight 1334.0
+#define DesignWidth 750.0
+#define GetWidth(width)  (width)/DesignWidth*LCF_SCREEN_WIDTH
+//判断是不是4s如果是则高度和5s一样的比例
+#define GetHeight(height) (LCF_SCREEN_HEIGHT > 568 ? (height)/DesignHeight*LCF_SCREEN_HEIGHT : (height)/DesignHeight*568)
+
+#endif /* PrefixHeader_h */
